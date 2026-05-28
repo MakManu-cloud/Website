@@ -43,18 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
      e.g. 'assets/part-01.jpg', 'assets/part-02.jpg', etc.
   ---------------------------------------------------------- */
   const portfolioItems = [
-    { src: "assets/part-01.jpg", label: "Precision Turned Shaft" },
-    { src: "assets/part-02.jpg", label: "Hydraulic Cylinder Component" },
-    { src: "assets/part-03.jpg", label: "Milled Aluminium Block" },
-    { src: "assets/part-04.jpg", label: "CNC Turned Bush" },
-    { src: "assets/part-05.jpg", label: "Stainless Steel Fitting" },
-    { src: "assets/part-06.jpg", label: "Bored Housing Component" },
-    { src: "assets/part-07.jpg", label: "Custom Bracket — Milled" },
-    { src: "assets/part-08.jpg", label: "Bearing-Fit Spindle" },
-    { src: "assets/part-09.jpg", label: "Chemical Pump Component" },
-    { src: "assets/part-10.jpg", label: "Drilled Flange Plate" },
-    { src: "assets/part-11.jpg", label: "Automotive Shaft — Turned" },
-    { src: "assets/part-12.jpg", label: "Welded Assembly" },
+    { src: "assets/part-01.jpg"},
+    { src: "assets/part-02.jpg"},
+    { src: "assets/part-03.jpg"},
+    { src: "assets/part-04.jpg"},
+    { src: "assets/part-05.jpg"},
+    { src: "assets/part-06.jpg"},
+    { src: "assets/part-07.jpg"},
+    { src: "assets/part-08.jpg"},
+    { src: "assets/part-09.jpg"},
+    { src: "assets/part-10.jpg"},
+    { src: "assets/part-11.jpg"},
+    { src: "assets/part-12.jpg"},
   ];
 
   const grid = document.getElementById("portfolioGrid");
