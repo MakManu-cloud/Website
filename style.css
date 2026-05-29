@@ -511,10 +511,12 @@ h4 {
 }
 
 .stat-badge {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin: 24px auto 0;
+  display: table;
   background: var(--gold);
   color: var(--navy);
   border-radius: var(--radius);
@@ -1509,6 +1511,33 @@ h4 {
   }
   .testimonial-slider {
     padding: 0;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP ONLY (min 901px)
+   Why card: number beside heading, same as mobile treatment
+============================================================ */
+@media (min-width: 901px) {
+  .why-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 14px;
+  }
+  .why-card .why-number {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .why-card h3 {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .why-card p {
+    width: 100%;
+    flex-basis: 100%;
   }
 
   .lightbox-prev {
