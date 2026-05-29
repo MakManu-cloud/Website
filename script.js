@@ -43,18 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
      e.g. 'assets/part-01.jpg', 'assets/part-02.jpg', etc.
   ---------------------------------------------------------- */
   const portfolioItems = [
-    { src: "assets/part-01.jpg"},
-    { src: "assets/part-02.jpg"},
-    { src: "assets/part-03.jpg"},
-    { src: "assets/part-04.jpg"},
-    { src: "assets/part-05.jpg"},
-    { src: "assets/part-06.jpg"},
-    { src: "assets/part-07.jpg"},
-    { src: "assets/part-08.jpg"},
-    { src: "assets/part-09.jpg"},
-    { src: "assets/part-10.jpg"},
-    { src: "assets/part-11.jpg"},
-    { src: "assets/part-12.jpg"},
+    { src: "assets/part-01.jpg" },
+    { src: "assets/part-02.jpg" },
+    { src: "assets/part-03.jpg" },
+    { src: "assets/part-04.jpg" },
+    { src: "assets/part-05.jpg" },
+    { src: "assets/part-06.jpg" },
+    { src: "assets/part-07.jpg" },
+    { src: "assets/part-08.jpg" },
+    { src: "assets/part-09.jpg" },
+    { src: "assets/part-10.jpg" },
+    { src: "assets/part-11.jpg" },
+    { src: "assets/part-12.jpg" },
   ];
 
   const grid = document.getElementById("portfolioGrid");
@@ -198,6 +198,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tPrev.addEventListener("click", () => goToSlide(tCurrent - 1));
   tNext.addEventListener("click", () => goToSlide(tCurrent + 1));
+
+  // Touch swipe support for mobile
+  let tTouchStartX = 0;
+  tTrack.addEventListener(
+    "touchstart",
+    (e) => {
+      tTouchStartX = e.changedTouches[0].clientX;
+    },
+    { passive: true },
+  );
+
+  tTrack.addEventListener(
+    "touchend",
+    (e) => {
+      const diff = tTouchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? tCurrent + 1 : tCurrent - 1);
+      }
+    },
+    { passive: true },
+  );
 
   buildDots();
   updateSlider();
