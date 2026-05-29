@@ -638,7 +638,13 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 0;
+}
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
 }
 .service-icon svg {
   width: 26px;
@@ -648,7 +654,6 @@ h4 {
 .service-card h3 {
   font-size: 1.2rem;
   color: var(--navy);
-  margin-bottom: 10px;
 }
 .service-card p {
   font-size: 0.92rem;
@@ -1392,6 +1397,15 @@ h4 {
   .testimonials,
   .faq {
     padding: 60px 0;
+  }
+
+  .stat-badge {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 16px auto 0;
+    display: table; /* shrinks to content width */
   }
 
   .hero-content {
