@@ -315,6 +315,7 @@ h4 {
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -459,6 +460,9 @@ h4 {
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
+}
+.about-image {
+  position: relative;
 }
 .img-collage {
   position: relative;
@@ -1399,18 +1403,60 @@ h4 {
     padding: 60px 0;
   }
 
+  .faq-left {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: 14px;
+  }
+  .faq-left .section-label {
+    margin-bottom: 0;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  .faq-left .section-title {
+    flex: 1;
+    min-width: 0;
+  }
+  .faq-left p,
+  .faq-left .btn {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .why-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 14px;
+  }
+  .why-card .why-number {
+    font-size: 2.2rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .why-card h3 {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 8px;
+  }
+  .why-card p {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
   .stat-badge {
     position: relative;
     bottom: auto;
     left: auto;
     transform: none;
-    margin: 16px auto 0;
+    margin: 32px auto 0;
     display: table; /* shrinks to content width */
   }
 
   .hero-content {
-    padding-top: 120px;
-    padding-bottom: 100px;
+    padding-top: 100px;
+    padding-bottom: 180px;
   }
   .hero-cta-row {
     flex-direction: column;
