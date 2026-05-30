@@ -264,6 +264,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------
+   8. WHATSAPP POPUP — toggle on icon click, close on outside click
+---------------------------------------------------------- */
+  const waTrigger = document.querySelector(".wa-trigger");
+  const waPopup = document.getElementById("waPopup");
+
+  if (waTrigger && waPopup) {
+    waTrigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      waPopup.classList.toggle("open");
+    });
+
+    // Close when clicking anywhere outside the popup
+    document.addEventListener("click", (e) => {
+      if (!waPopup.contains(e.target) && !waTrigger.contains(e.target)) {
+        waPopup.classList.remove("open");
+      }
+    });
+
+    // Also close if user picks a number
+    waPopup.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => waPopup.classList.remove("open"));
+    });
+  }
+
+  /* ----------------------------------------------------------
      7. SMOOTH ACTIVE NAV LINK HIGHLIGHT on scroll
   ---------------------------------------------------------- */
   const sections = document.querySelectorAll("section[id], footer[id]");
