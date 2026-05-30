@@ -1323,6 +1323,69 @@ h4 {
 }
 
 /* ============================================================
+   WHATSAPP POPUP
+============================================================ */
+.wa-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+.wa-popup {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 8px;
+  min-width: 210px;
+  box-shadow: var(--shadow);
+  z-index: 100;
+  flex-direction: column;
+  gap: 4px;
+}
+.wa-popup.open {
+  display: flex;
+}
+/* Small arrow pointing down toward the icon */
+.wa-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--navy-2);
+}
+.wa-popup a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  transition: background var(--transition);
+}
+.wa-popup a:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+.wa-label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.wa-number {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ============================================================
    ANIMATIONS
 ============================================================ */
 @keyframes fadeSlideIn {
